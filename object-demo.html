@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <script src="js/objects.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="box flex flex-col bg-red-400 text-white justify-center h-screen items-center">
+
+        <form action="" onsubmit="createNewObject(event)">
+            <div class="form-row mb-4 text-black">
+                <label for="first">First name</label>
+                <input type="text" id="first" name="first">
+            </div>
+            <div class="form-row mb-4 text-black">
+                <label for="last">Last name</label>
+                <input type="text" id="last" name="last">
+            </div>
+            <div class="form-row mb-4 text-black">
+                <label for="eye">Eye Colour</label>
+                <input type="text" id="eye" name="eye">
+            </div>
+            <div class="form-row mb-4 text-black">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age">
+            </div>
+
+            <button type="submit" class="bg-green-400 p-4 rounded-full">Submit form</button>
+
+        </form>
+
+    </div>
+</body>
+</html>
