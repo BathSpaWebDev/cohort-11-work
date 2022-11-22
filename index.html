@@ -5,14 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cohort 11</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/menu-toggle.js" defer async></script>
 </head>
 <body>
+    <nav class="main-navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="toggle-menu">Menu</button>
+    </nav>
+
+    <nav class="mobile-navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
     <h1>Changed title</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi sequi totam, repellat molestias pariatur enim dolorem iste odit, laudantium eius. Eveniet hic nobis eligendi, mollitia quis maxime minima eos.</p>
 
-    <script>
-        alert('hello');
-    </script>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://images.unsplash.com/photo-1668448388988-a901c54d954e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" style="width:100%">
+        <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://images.unsplash.com/photo-1668508485538-662819fc9453?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" style="width:100%">
+        <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://images.unsplash.com/photo-1668435548494-e715c74c4ceb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" style="width:100%">
+        <div class="text">Caption Three</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
  
 
 </body>
